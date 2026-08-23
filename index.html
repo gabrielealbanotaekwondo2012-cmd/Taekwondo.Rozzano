@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b0d10">
+  <meta name="description" content="Corsi di Taekwondo a Fizzonasco, Pieve Emanuele. Disciplina, tecnica, sicurezza e crescita per bambini, ragazzi e adulti.">
+  <title>Taekwondo Fizzonasco | Pieve Emanuele</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0a0c0f;
+      --bg2:#10141a;
+      --card:#141920;
+      --line:rgba(255,255,255,.10);
+      --text:#f6f7f8;
+      --muted:#adb6c2;
+      --red:#ef233c;
+      --red2:#b9152b;
+      --blue:#1683ff;
+      --green:#25D366;
+      --max:1180px;
+      --shadow:0 24px 70px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .container{width:min(calc(100% - 36px),var(--max));margin:auto}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      text-transform:uppercase;letter-spacing:.17em;
+      font-size:.78rem;font-weight:800;color:#ff566a;
+    }
+    .eyebrow:before{content:"";width:34px;height:2px;background:var(--red)}
+    h1,h2,h3{font-family:"Barlow Condensed",sans-serif;line-height:.95;margin:0}
+    h2{font-size:clamp(2.6rem,6vw,5rem);text-transform:uppercase}
+    .section{padding:110px 0}
+    .muted{color:var(--muted)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:52px;padding:0 22px;border-radius:12px;border:1px solid transparent;
+      font-weight:800;transition:.25s ease;cursor:pointer;
+    }
+    .btn-primary{background:linear-gradient(135deg,var(--red),var(--red2));box-shadow:0 12px 35px rgba(239,35,60,.23)}
+    .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.06)}
+    .btn-ghost{border-color:rgba(255,255,255,.20);background:rgba(255,255,255,.04)}
+    .btn-ghost:hover{background:rgba(255,255,255,.08)}
+    .btn-whatsapp{background:var(--green);color:#08140d}
+    .btn-whatsapp:hover{transform:translateY(-2px)}
+
+    header{
+      position:fixed;left:0;right:0;top:0;z-index:50;
+      background:linear-gradient(to bottom,rgba(7,9,12,.93),rgba(7,9,12,.68),transparent);
+      backdrop-filter:blur(10px);
+    }
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .brand{
+      display:flex;align-items:center;gap:12px;font-family:"Barlow Condensed",sans-serif;
+      font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:1.1rem
+    }
+    .brand-mark{
+      width:42px;height:42px;border-radius:50%;
+      display:grid;place-items:center;
+      background:radial-gradient(circle at 30% 30%,#ff5f70,var(--red) 45%,#8c0b1d);
+      box-shadow:0 0 0 5px rgba(239,35,60,.10);
+      font-size:.9rem;
+    }
+    .navlinks{display:flex;gap:26px;align-items:center;font-size:.94rem;font-weight:700}
+    .navlinks a{color:#e6e9ed}
+    .navlinks a:hover{color:#fff}
+    .menu{display:none;background:none;border:0;color:#fff;font-size:1.65rem}
+
+    .hero{
+      min-height:100svh;display:flex;align-items:flex-end;position:relative;
+      padding:145px 0 76px;
+      background:
+        linear-gradient(90deg,rgba(5,7,9,.96) 0%,rgba(5,7,9,.75) 42%,rgba(5,7,9,.18) 75%),
+        linear-gradient(0deg,rgba(5,7,9,.96) 0%,transparent 52%),
+        url("assets/images/taekwondo-11.png") center 34%/cover no-repeat;
+    }
+    .hero:after{
+      content:"";position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(120deg,transparent 55%,rgba(239,35,60,.11));
+    }
+    .hero-content{position:relative;z-index:2;max-width:790px}
+    .hero h1{
+      margin-top:18px;
+      font-size:clamp(4.4rem,10vw,8.5rem);
+      text-transform:uppercase;letter-spacing:-.035em;
+    }
+    .hero h1 span{color:var(--red)}
+    .hero p{font-size:clamp(1.03rem,2vw,1.24rem);max-width:660px;color:#d7dce2;margin:24px 0 30px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .hero-strip{
+      margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);
+      border-top:1px solid var(--line);max-width:760px;
+    }
+    .hero-stat{padding:20px 20px 0 0}
+    .hero-stat strong{display:block;font-family:"Barlow Condensed";font-size:1.55rem;text-transform:uppercase}
+    .hero-stat span{color:var(--muted);font-size:.9rem}
+
+    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+    .intro-media{position:relative}
+    .intro-media img{
+      width:100%;height:610px;object-fit:cover;border-radius:24px;box-shadow:var(--shadow)
+    }
+    .floating-card{
+      position:absolute;right:-25px;bottom:28px;max-width:250px;
+      background:#f3f5f7;color:#0f1216;padding:20px;border-radius:18px;box-shadow:var(--shadow)
+    }
+    .floating-card strong{font-family:"Barlow Condensed";font-size:1.5rem;text-transform:uppercase}
+    .intro-copy p{font-size:1.05rem;color:var(--muted)}
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+    .value{
+      background:var(--card);border:1px solid var(--line);padding:20px;border-radius:16px
+    }
+    .value strong{display:block;font-family:"Barlow Condensed";font-size:1.35rem;text-transform:uppercase}
+    .value span{font-size:.86rem;color:var(--muted)}
+
+    .courses{background:linear-gradient(180deg,#0f1318,#0a0c0f)}
+    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:42px}
+    .section-head p{max-width:530px;color:var(--muted);margin:0}
+    .course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .course-card{
+      min-height:410px;padding:28px;border:1px solid var(--line);border-radius:22px;
+      display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;position:relative;
+      background:#111;
+    }
+    .course-card:before{
+      content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(4,6,8,.96),rgba(4,6,8,.15) 65%)
+    }
+    .course-card:nth-child(1){background:url("assets/images/taekwondo-09.png") center/cover}
+    .course-card:nth-child(2){background:url("assets/images/taekwondo-10.png") center/cover}
+    .course-card:nth-child(3){background:url("assets/images/taekwondo-03.png") center/cover}
+    .course-card>*{position:relative}
+    .course-card h3{font-size:2.1rem;text-transform:uppercase;margin:8px 0}
+    .course-card p{color:#d2d6dc;margin:0}
+
+    .master-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:60px;align-items:center}
+    .master-photo img{width:100%;height:670px;object-fit:cover;object-position:center 30%;border-radius:24px}
+    .master-copy p{color:var(--muted);font-size:1.05rem}
+    .quote{
+      border-left:3px solid var(--red);padding:2px 0 2px 20px;margin:28px 0;
+      font-family:"Barlow Condensed";font-size:1.55rem;line-height:1.15;text-transform:uppercase
+    }
+
+    .benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:42px}
+    .benefit{padding:24px;background:var(--card);border:1px solid var(--line);border-radius:18px}
+    .benefit b{font-size:1.25rem;display:block;margin-bottom:8px}
+    .benefit p{color:var(--muted);margin:0;font-size:.92rem}
+
+    .gallery{background:#0d1014}
+    .gallery-grid{
+      display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:220px;gap:12px
+    }
+    .gallery-item{overflow:hidden;border-radius:16px;cursor:pointer;position:relative}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:.35s ease}
+    .gallery-item:hover img{transform:scale(1.04)}
+    .gallery-item:nth-child(1){grid-column:span 7;grid-row:span 2}
+    .gallery-item:nth-child(2){grid-column:span 5}
+    .gallery-item:nth-child(3){grid-column:span 5}
+    .gallery-item:nth-child(4){grid-column:span 4}
+    .gallery-item:nth-child(5){grid-column:span 4}
+    .gallery-item:nth-child(6){grid-column:span 4}
+    .gallery-item:nth-child(n+7){grid-column:span 3}
+    .gallery-note{color:var(--muted);margin-top:18px;font-size:.9rem}
+
+    .location-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:26px;align-items:stretch}
+    .location-card{
+      background:linear-gradient(145deg,#171c23,#101419);
+      border:1px solid var(--line);padding:34px;border-radius:22px;display:flex;flex-direction:column
+    }
+    .address{font-family:"Barlow Condensed";font-size:2rem;text-transform:uppercase;line-height:1.05;margin:18px 0}
+    .map{min-height:470px;border-radius:22px;overflow:hidden;border:1px solid var(--line)}
+    .map iframe{width:100%;height:100%;border:0;display:block}
+    .contact-box{
+      padding:50px;border-radius:24px;
+      background:
+        linear-gradient(100deg,rgba(6,8,10,.95),rgba(6,8,10,.55)),
+        url("assets/images/taekwondo-02.png") center/cover;
+      border:1px solid var(--line);box-shadow:var(--shadow)
+    }
+    .contact-box h2{max-width:760px}
+    .contact-box p{max-width:680px;color:#d9dee4;font-size:1.05rem}
+    .contact-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+
+    footer{padding:34px 0;border-top:1px solid var(--line);color:#9ba4af}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .footer-row strong{color:#fff}
+
+    .wa-float{
+      position:fixed;right:20px;bottom:20px;z-index:45;
+      width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
+      background:var(--green);color:#07170d;font-size:1.45rem;box-shadow:0 16px 40px rgba(0,0,0,.35);
+    }
+
+    .reveal{opacity:0;transform:translateY(20px);transition:.7s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    .lightbox{
+      position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100;
+      display:none;align-items:center;justify-content:center;padding:24px
+    }
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:95vw;max-height:90vh;border-radius:12px}
+    .lightbox button{position:absolute;right:24px;top:18px;background:none;border:0;color:white;font-size:2rem;cursor:pointer}
+
+    @media(max-width:920px){
+      .navlinks{display:none;position:absolute;left:18px;right:18px;top:72px;background:#0d1116;border:1px solid var(--line);padding:18px;border-radius:16px;flex-direction:column;align-items:flex-start}
+      .navlinks.open{display:flex}.menu{display:block}
+      .hero{background-position:62% center}
+      .hero-strip{grid-template-columns:1fr}
+      .intro-grid,.master-grid,.location-grid{grid-template-columns:1fr}
+      .course-grid{grid-template-columns:1fr}
+      .benefits-grid{grid-template-columns:repeat(2,1fr)}
+      .floating-card{right:12px}
+      .section-head{display:block}
+      .section-head p{margin-top:18px}
+      .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:190px}
+      .gallery-item,.gallery-item:nth-child(n){grid-column:span 1;grid-row:span 1}
+      .gallery-item:first-child{grid-column:span 2}
+    }
+    @media(max-width:620px){
+      .section{padding:78px 0}
+      .container{width:min(calc(100% - 26px),var(--max))}
+      .hero{padding-bottom:44px}
+      .hero h1{font-size:clamp(4rem,20vw,6.7rem)}
+      .hero-strip{margin-top:34px}
+      .intro-media img,.master-photo img{height:470px}
+      .values,.benefits-grid{grid-template-columns:1fr}
+      .floating-card{position:static;margin-top:12px;max-width:none}
+      .gallery-grid{grid-template-columns:1fr}
+      .gallery-item,.gallery-item:first-child{grid-column:span 1}
+      .contact-box{padding:30px 22px}
+      .footer-row{flex-direction:column;align-items:flex-start}
+      .nav .btn-primary{display:none}
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand" aria-label="Torna all'inizio">
+      <span class="brand-mark">TKD</span>
+      <span>Taekwondo • Rozzano</span>
+    </a>
+
+    <nav class="navlinks" id="navlinks">
+      <a href="#scuola">La scuola</a>
+      <a href="#corsi">Corsi</a>
+      <a href="#maestro">Il Maestro</a>
+      <a href="#gallery">Galleria</a>
+      <a href="#dove">Dove siamo</a>
+    </nav>
+
+    <a class="btn btn-primary" href="https://wa.me/393248821404?text=Ciao%2C%20vorrei%20ricevere%20informazioni%20sui%20corsi%20di%20Taekwondo." target="_blank" rel="noopener">Contattaci</a>
+    <button class="menu" id="menu" aria-label="Apri menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content reveal">
+        <div class="eyebrow">Taekwondo a Pieve Emanuele</div>
+        <h1>Forza.<br><span>Disciplina.</span><br>Rispetto.</h1>
+        <p>Un percorso che allena il corpo e forma il carattere. Corsi di Taekwondo in un ambiente serio, dinamico e accogliente, con attenzione alla crescita di ogni allievo.</p>
+        <div class="hero-actions">
+          <a class="btn btn-whatsapp" href="https://wa.me/393248821404?text=Ciao%2C%20vorrei%20ricevere%20informazioni%20sui%20corsi%20di%20Taekwondo." target="_blank" rel="noopener">Scrivici su WhatsApp</a>
+          <a class="btn btn-ghost" href="#dove">Vieni a trovarci</a>
+        </div>
+
+        <div class="hero-strip">
+          <div class="hero-stat"><strong>Bambini</strong><span>Coordinazione, sicurezza e disciplina</span></div>
+          <div class="hero-stat"><strong>Ragazzi</strong><span>Tecnica, autocontrollo e obiettivi</span></div>
+          <div class="hero-stat"><strong>Adulti</strong><span>Allenamento, forma fisica e concentrazione</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="scuola">
+    <div class="container intro-grid">
+      <div class="intro-media reveal">
+        <img src="assets/images/taekwondo-07.png" alt="Allenamento di Taekwondo con bambini e ragazzi" loading="lazy">
+        <div class="floating-card">
+          <strong>Molto più di uno sport.</strong>
+          <div>Educazione, rispetto, costanza e fiducia in sé stessi.</div>
+        </div>
+      </div>
+
+      <div class="intro-copy reveal">
+        <div class="eyebrow">La nostra scuola</div>
+        <h2>Si cresce<br>un allenamento<br>alla volta.</h2>
+        <p>Il Taekwondo unisce preparazione atletica, tecnica, disciplina e valori. Ogni lezione è costruita per migliorare coordinazione, controllo, concentrazione e fiducia.</p>
+        <p>Per i più piccoli il percorso è anche educativo: imparare ad ascoltare, rispettare le regole, affrontare le difficoltà e raggiungere obiettivi concreti.</p>
+
+        <div class="values">
+          <div class="value"><strong>Disciplina</strong><span>Costanza e metodo.</span></div>
+          <div class="value"><strong>Rispetto</strong><span>Per sé e per gli altri.</span></div>
+          <div class="value"><strong>Crescita</strong><span>Obiettivi progressivi.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section courses" id="corsi">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">I corsi</div>
+          <h2>Un percorso<br>per ogni età.</h2>
+        </div>
+        <p>Ogni gruppo lavora con obiettivi adeguati all'età e al livello. Per conoscere giorni, orari e disponibilità dei corsi, scrivici direttamente su WhatsApp.</p>
+      </div>
+
+      <div class="course-grid">
+        <article class="course-card reveal">
+          <div class="eyebrow">Primi passi</div>
+          <h3>Bambini</h3>
+          <p>Gioco motorio, coordinazione, regole, rispetto e basi tecniche in un ambiente coinvolgente.</p>
+        </article>
+        <article class="course-card reveal">
+          <div class="eyebrow">Crescita</div>
+          <h3>Ragazzi</h3>
+          <p>Tecnica, mobilità, autocontrollo, preparazione fisica e progressione verso obiettivi sempre più ambiziosi.</p>
+        </article>
+        <article class="course-card reveal">
+          <div class="eyebrow">Allenamento</div>
+          <h3>Adulti</h3>
+          <p>Un'attività completa per allenare corpo e mente, migliorando resistenza, tecnica, concentrazione e sicurezza.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="maestro">
+    <div class="container master-grid">
+      <div class="master-photo reveal">
+        <img src="assets/images/taekwondo-10.png" alt="Maestro durante una lezione di Taekwondo" loading="lazy">
+      </div>
+      <div class="master-copy reveal">
+        <div class="eyebrow">Il Maestro</div>
+        <h2>Esperienza,<br>presenza,<br>metodo.</h2>
+        <p>Il Maestro segue gli allievi con un approccio diretto e attento, adattando il lavoro alle diverse età e capacità. L'obiettivo non è solo imparare tecniche: è costruire sicurezza, disciplina e consapevolezza.</p>
+        <div class="quote">“La tecnica si allena. Il carattere si costruisce.”</div>
+        <p>Il Maestro Vittorio pratica arti marziali da oltre 24 anni, maturando nel tempo una solida esperienza tecnica e agonistica.</p>
+        <a class="btn btn-primary" href="https://wa.me/393248821404?text=Ciao%2C%20vorrei%20conoscere%20meglio%20i%20corsi%20e%20il%20percorso%20di%20Taekwondo." target="_blank" rel="noopener">Chiedi informazioni</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">Perché Taekwondo</div>
+          <h2>Corpo e mente<br>nello stesso percorso.</h2>
+        </div>
+        <p>La pratica costante aiuta a sviluppare abilità fisiche e personali che vanno ben oltre la palestra.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit reveal"><b>Coordinazione</b><p>Movimenti più precisi, controllo del corpo e migliore equilibrio.</p></div>
+        <div class="benefit reveal"><b>Concentrazione</b><p>Ascolto, attenzione e capacità di restare focalizzati sull'obiettivo.</p></div>
+        <div class="benefit reveal"><b>Autostima</b><p>Progressi visibili, nuove competenze e maggiore sicurezza personale.</p></div>
+        <div class="benefit reveal"><b>Disciplina</b><p>Impegno, rispetto delle regole e costanza nel tempo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">Dentro gli allenamenti</div>
+          <h2>La palestra<br>in azione.</h2>
+        </div>
+        <p>Le immagini raccontano il clima delle lezioni: attenzione, energia, movimento e partecipazione.</p>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item"><img src="assets/images/taekwondo-01.png" alt="Lezione dimostrativa di Taekwondo" loading="lazy"></div>
+        <div class="gallery-item"><img src="assets/images/taekwondo-02.png" alt="Dimostrazione tecnica di calcio" loading="lazy"></div>
+        <div class="gallery-item"><img src="assets/images/taekwondo-04.png" alt="Allenamento con colpitori" loading="lazy"></div>
+        <div class="gallery-item"><img src="assets/images/taekwondo-05.png" alt="Bambini durante esercizio tecnico" loading="lazy"></div>
+        <div class="gallery-item"><img src="assets/images/taekwondo-06.png" alt="Attività motoria in palestra" loading="lazy"></div>
+        <div class="gallery-item"><img src="assets/images/taekwondo-08.png" alt="Palestra e area attività" loading="lazy"></div>
+        <div class="gallery-item"><img src="assets/images/taekwondo-09.png" alt="Bambina in divisa di Taekwondo" loading="lazy"></div>
+        <div class="gallery-item"><img src="assets/images/taekwondo-10.png" alt="Gruppo di piccoli allievi di Taekwondo" loading="lazy"></div>
+        <div class="gallery-item"><img src="assets/images/taekwondo-11.png" alt="Allievi durante visione tecnica di Taekwondo" loading="lazy"></div>
+      </div>
+      <div class="gallery-note">Tocca o clicca una foto per ingrandirla.</div>
+    </div>
+  </section>
+
+  <section class="section" id="dove">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">Dove siamo</div>
+          <h2>Vieni a<br>conoscerci.</h2>
+        </div>
+        <p>La palestra si trova a Fizzonasco, nel comune di Pieve Emanuele. Puoi aprire la mappa, calcolare il percorso e raggiungerci facilmente.</p>
+      </div>
+
+      <div class="location-grid">
+        <div class="location-card reveal">
+          <div class="eyebrow">Indirizzo</div>
+          <div class="address">Piazza S. Allende 14<br>Fizzonasco<br>Pieve Emanuele</div>
+          <p class="muted">Per informazioni su corsi, orari e lezioni di prova contattaci direttamente su WhatsApp.</p>
+          <div style="margin-top:auto;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn btn-whatsapp" href="https://wa.me/393248821404?text=Ciao%2C%20vorrei%20ricevere%20informazioni%20sui%20corsi%20di%20Taekwondo." target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Piazza%20S.%20Allende%2014%2C%20Fizzonasco%2C%20Pieve%20Emanuele" target="_blank" rel="noopener">Apri Maps</a>
+          </div>
+        </div>
+
+        <div class="map reveal">
+          <iframe
+            title="Mappa della palestra"
+            src="https://www.google.com/maps?q=Piazza%20S.%20Allende%2014%2C%20Fizzonasco%2C%20Pieve%20Emanuele&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-box reveal">
+        <div class="eyebrow">Inizia da qui</div>
+        <h2>Vuoi provare<br>Taekwondo?</h2>
+        <p>Scrivici su WhatsApp per conoscere corsi, orari, disponibilità e modalità di prova. Ti risponderemo con tutte le informazioni utili.</p>
+        <div class="contact-actions">
+          <a class="btn btn-whatsapp" href="https://wa.me/393248821404?text=Ciao%2C%20vorrei%20ricevere%20informazioni%20sui%20corsi%20di%20Taekwondo%20e%20su%20una%20lezione%20di%20prova." target="_blank" rel="noopener">Contattaci su WhatsApp</a>
+          <a class="btn btn-ghost" href="#dove">Guarda dove siamo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div><strong>Taekwondo • Rozzano</strong><br>Piazza S. Allende 14, Pieve Emanuele</div>
+    <div>WhatsApp: 324 882 1404</div>
+    <div>© <span id="year"></span> Tutti i diritti riservati</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/393248821404?text=Ciao%2C%20vorrei%20ricevere%20informazioni%20sui%20corsi%20di%20Taekwondo." target="_blank" rel="noopener" aria-label="Contatta su WhatsApp">✆</a>
+
+<div class="lightbox" id="lightbox">
+  <button id="closeLightbox" aria-label="Chiudi">×</button>
+  <img id="lightboxImg" alt="">
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const menu = document.getElementById('menu');
+  const navlinks = document.getElementById('navlinks');
+  menu.addEventListener('click', () => navlinks.classList.toggle('open'));
+  navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navlinks.classList.remove('open')));
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.gallery-item img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('closeLightbox').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e => { if(e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
